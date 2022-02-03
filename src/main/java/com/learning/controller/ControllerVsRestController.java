@@ -5,12 +5,10 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-//@Controller
+@Controller
 //@ResponseBody
-@RestController
+//@RestController
 public class ControllerVsRestController {
-
-
 
 
     //By default, Spring Boot RESTful Web service endpoints consume and produce JSON representation.
@@ -26,24 +24,22 @@ public class ControllerVsRestController {
     //https://www.bezkoder.com/spring-boot-rest-xml/
 
 
-
     @RequestMapping(value = "/server",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_XML_VALUE)
 
-    private Server getServerInfo(){
+    private Server getServerInfo() {
         System.out.println("server info");
         return new Server();
     }
 
 
-
-    @RequestMapping(value = "/api/server/",method = RequestMethod.POST,
-             produces = MediaType.APPLICATION_XML_VALUE,
+    @RequestMapping(value = "/api/server/", method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_XML_VALUE,
             consumes = MediaType.APPLICATION_XML_VALUE
-             )
-    public Server serverModify(@RequestBody Server server){
-        System.out.println("server info "+server);
+    )
+    public Server serverModify(@RequestBody Server server) {
+        System.out.println("server info " + server);
         return server;
     }
 }

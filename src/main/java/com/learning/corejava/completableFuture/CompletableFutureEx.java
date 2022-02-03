@@ -1,9 +1,6 @@
 package com.learning.corejava.completableFuture;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class CompletableFutureEx {
 
@@ -47,6 +44,7 @@ public class CompletableFutureEx {
 //        If we want to run some task in background that Returns Some Value,
 //        then we can use CompletableFuture.supplyAsync() it takes a Supplier<T>
 //        and returns completableFuture<T>
+
         CompletableFuture<String> completableFuture=CompletableFuture.supplyAsync(()->processSupplyAsync());
         try {
          String str=   completableFuture.get();

@@ -22,4 +22,9 @@ public class Server {
     public void setVersion(String version) {
         this.version = version;
     }
+    @Override
+    protected void finalize()
+    {
+        System.out.println("finalize method called");
+    }
 }

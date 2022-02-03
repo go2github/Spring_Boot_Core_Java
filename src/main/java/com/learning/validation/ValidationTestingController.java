@@ -1,6 +1,7 @@
 package com.learning.validation;
 
 import com.learning.request.Student;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
@@ -87,5 +89,12 @@ public class ValidationTestingController {
         public List<FieldError> getFieldErrors() {
             return fieldErrors;
         }
+    }
+    @PostMapping(value = "/student/",consumes = MediaType.ALL_VALUE)
+    ResponseEntity<String> student(@RequestBody String str,@RequestHeader Map<String, String> headers) {
+        headers.forEach((key, value) -> {
+            System.out.println("Header "+ key+" = "+ value);
+        });
+        return ResponseEntity.ok("Headers are read successfully ");
     }
 }
