@@ -1,0 +1,11 @@
+
+https://www.youtube.com/watch?v=udnX21__SuU
+above is important link
+
+
+
+ bin/zookeeper-server-start.sh config/zookeeper.properties
+
+ bin/kafka-server-start.sh config/server.properties
+
+ https://kafka.apache.org/21/javadoc/org/apache/kafka/common/serialization/package-frame.html

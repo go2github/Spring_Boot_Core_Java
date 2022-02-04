@@ -1,0 +1,8 @@
+ export ACCESSKEY=AKIAZDWZSZSROSJE4BZQ
+ export SECRETKEY=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
+
+ export $(cat .env | xargs)
+
+ above command to see environment variable
+
+
